@@ -1,5 +1,10 @@
 from pydantic import BaseModel, Field, field_validator
-from typing import Literal, Optional
+from typing import Literal, Optional, Any
+
+class ResponseModel(BaseModel):
+    status: str
+    message: str
+    data: Optional[Any] = None
 
 class Bank(BaseModel):
     name: str
